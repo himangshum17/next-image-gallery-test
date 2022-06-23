@@ -17,3 +17,58 @@ a {
 h1 {
   padding: 0 24px;
 }
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.wrapper-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper-gallery li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+.wrapper-gallery li:last-child {
+  flex-grow: 10;
+}
+
+.wrapper-gallery img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  height: 100%;
+  max-width: 100%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .wrapper-gallery li {
+    height: 30vh;
+  }
+}
+@media (max-height: 480px) {
+  .wrapper-gallery li {
+    height: 80vh;
+  }
+}
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .wrapper-gallery {
+    flex-direction: row;
+  }
+
+  .wrapper-gallery li {
+    height: auto;
+    width: 100%;
+  }
+
+  .wrapper-gallery img {
+    width: 100%;
+    max-height: 100vh;
+    min-width: 0;
+  }
+}
